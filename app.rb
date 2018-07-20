@@ -23,13 +23,17 @@ class App < Sinatra::Base
   end
 
   get "/:operation/:number1/:number2" do
+    n1 = params[:number1]
+    n2 = params[:number2]
     case params[:operation]
     when "add"
-      params[:number1] + params[:number2]
+      n1 + n2
     when "subtract"
-      params[:number1] - params[:number2]
+      n1 - n2
     when "multiply"
-      params[:number1] * params[:number2]
+      n1 * n2
+    when "divide"
+      n1 / n2
     end
   end
 
