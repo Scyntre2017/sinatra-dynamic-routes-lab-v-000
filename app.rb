@@ -18,7 +18,8 @@ class App < Sinatra::Base
   end
 
   get "/say/:word1/:word2/:word3/:word4/:word5" do
-    params.map { |key, value| value }.join(" ")
+    string = params.map { |key, value| value }.join(" ")
+    string.concat(".")
   end
 
 end
